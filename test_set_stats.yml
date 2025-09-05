@@ -5,7 +5,7 @@
       string: 'abc'
       integer: 123
       float: 1.0
-      unicode: '竳䙭韽'
+      unicode_string: '竳䙭韽'
       boolean: true
       none: null
       list:

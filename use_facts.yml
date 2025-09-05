@@ -28,7 +28,7 @@
       tags:
         - custom_facts
     - debug:
-        msg: '{{int}}'
+        msg: '{{integer}}'
       tags:
         - custom_facts
     - debug:
