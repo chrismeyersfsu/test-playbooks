@@ -1,0 +1,12 @@
+- name: Test aap_ things
+  hosts: localhost
+  environment:
+    CONTROLLER_OPTIONAL_API_URLPATTERN_PREFIX: '/api/controller/'
+  tasks:
+    - name: Get me
+      awx.awx.job_list:
+      register: me
+
+    - debug:
+        msg: "{{ me }}"
+
