@@ -3,6 +3,10 @@
   environment:
     CONTROLLER_OPTIONAL_API_URLPATTERN_PREFIX: '/api/controller/'
   tasks:
+    - name: all of the env vars
+      debug:
+        msg: "{{ ansible_env }}"
+
     - name: Get me
       awx.awx.job_list:
       register: me
@@ -10,3 +14,11 @@
     - debug:
         msg: "{{ me }}"
 
+    - name: Create Organization
+      ansible.platform.organization:
+        name: Ansible Product Development
+        description: Organization for ansible developers
+      register: org
+
+    - debug:
+        msg: "{{ org }}"
