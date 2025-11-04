@@ -3,7 +3,7 @@
   hosts: all
   #  ignore_unreachable: yes
   gather_facts: false
-  #vars:
+  vars:
     remote_port: 5986
     ansible_winrm_server_cert_validation: ignore
   tasks:
