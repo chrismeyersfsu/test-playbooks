@@ -1,0 +1,14 @@
+---
+- name: Ping
+  hosts: all
+  #  ignore_unreachable: yes
+  gather_facts: false
+  #vars:
+    remote_port: 5986
+    ansible_winrm_server_cert_validation: ignore
+  tasks:
+    - name: Wait for system to become reachable over WinRM
+      ansible.builtin.wait_for_connection:
+        timeout: 10
+    - name: ping
+      ansible.windows.win_ping:
